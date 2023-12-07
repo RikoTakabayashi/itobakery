@@ -1,0 +1,21 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+#about h1{
+    color:rgb(59, 59, 186);
+    font-size:45px;
+    margin-bottom: 30px;
+    border-bottom: 3px dashed rgb(59, 59, 186);
+}
+
+.open h1{
+    color:rgb(59, 59, 186);
+    font-size:30px;
+}
+
+.access h2{
+    color:rgb(59, 59, 186);
+    font-size:30px;
+}

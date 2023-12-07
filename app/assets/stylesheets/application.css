@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+    padding: 10;
+    margin: 0;
+    background-color: #f8eaf8;
+    
+  }
+
+  .ito {
+    font-family: 'Cherry+Bomb+One', cursive;
+    padding-bottom:0px;
+    
+  }
+  
+
+  .ito h1{
+    color:rgb(59, 59, 186);
+    font-size:20px;
+    text-align:center;
+  }
+
+
+  header {
+    background-color: #f7d2de;
+    /* height: 300px; */
+    font-weight: bold;
+    
+    background-size: cover;
+    margin-top:0px;
+  }
+
+  .header-list {
+    text-decoration: none;
+    position: relative;
+    background-image: url("churros-2188869_1280.jpg");
+    background-size: cover ; /* 画像の幅を100%に合わせる */
+    display: flex;
+    padding-bottom: 700px;
+    /* margin-top: 600px; */
+  }
+  
+  .header-link {
+    
+    background: #080909;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+  }
+
+  .hako{
+    color: rgb(181, 19, 67);
+    border: solid 2px ;
+    height: 70px;
+  }
+
+  .hako:hover{
+    cursor: pointer;
+    color: azure;
+
+    
+  }
+
+   .login{
+    list-style: none;
+    margin-left: 1250px;
+    vertical-align: bottom;
+    color: white;
+  }
+
+  footer {
+    color: rgb(39, 51, 181);
+    height: 30px;
+    background-color: #FFEEFF;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+  }
+
+  

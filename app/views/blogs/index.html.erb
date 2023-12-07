@@ -1,0 +1,86 @@
+
+<p id="notice"><%= notice %></p>
+<br><br>
+<div id="about">
+<h1>店舗情報</h1>
+
+</div>
+
+
+<br><br>
+ <div class="open">
+  <h1>営業日</h1>
+ </div>
+
+ <table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>時間</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog.id) %></td>
+        <td><%= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+ </table>
+
+
+<br>
+
+<%= link_to '日記をかく', new_blog_path %>
+
+<%= month_calendar events: @blogs do |date, blogs| %>
+  <%= date.day %>
+
+  <% blogs.each do |blog| %>
+    <div>
+      <%= link_to blog.title, blog %>
+    </div>
+  <% end %>
+<% end %>
+
+<br><br><br><br>
+
+<div class="access">
+<h2>Access</h2>
+</div>
+
+<div id='map'>
+</div>
+
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+  }
+</style>
+
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.71117, lng:139.72178},
+    zoom: 17,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 35.71117, lng:139.72178},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzYL6CFZy8VuHsSNfEGmaFriVaWy6Tpvw&callback=initMap" async defer></script>

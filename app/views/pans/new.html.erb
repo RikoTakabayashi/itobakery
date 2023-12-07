@@ -1,0 +1,50 @@
+<h1>イトウベーカリー</h1>
+<h3>Homepage</h3>
+<%= form_for @pan do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 30 %>
+    <h5>評価</h5>
+     <div class="post_form">
+        <%= f.radio_button :overall, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+    
+        <%= f.radio_button :overall, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+    
+        <%= f.radio_button :overall, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+    
+        <%= f.radio_button :overall, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+    
+        <%= f.radio_button :overall, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+  </div>
+
+  <div class="field">
+    <%= f.label :kinds  %>
+    <%= f.select :kinds, 
+    [["甘い", "甘い"], 
+    ["辛い", "辛い"], 
+    ["柔らかい", "柔らかい"],
+    ["固い", "固い"]], include_blank: "選択して下さい" %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+  <%= f.label :about  %>
+  <%= f.text_field :about, :size => 30 %>
+</div>
+
+  <div class="field">
+    <%= f.label :price  %>
+    <%= f.number_field :price, :size => 10 %>
+  </div>
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", pans_path %>

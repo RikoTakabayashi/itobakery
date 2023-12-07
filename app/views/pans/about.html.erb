@@ -1,0 +1,33 @@
+
+
+<%= link_to "営業時間", blogs_path %>
+
+<h2>Access</h2>
+
+<div id='map'></div>
+
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+}
+</style>
+
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.71117, lng:139.72178},
+    zoom: 17,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 35.71117, lng:139.72178},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzYL6CFZy8VuHsSNfEGmaFriVaWy6Tpvw&callback=initMap" async defer></script>

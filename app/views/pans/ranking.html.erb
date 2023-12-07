@@ -1,0 +1,31 @@
+<br><br>
+
+<div class="ranking">
+<h3>ランキング<h3>
+</div>
+
+
+<% @pans.each do |t| %>
+
+
+    <div class="pan">
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= t.name %>
+      <%= t.kinds %>
+      <%= t.about %>
+      <%= t.price %>
+      <%= link_to "詳細へ", pan_path(t.id) %>
+      <%= link_to "編集する", edit_pan_path(t.id) %>
+      <%= link_to "削除する", pan_path(t.id), method: :delete %> 
+      <div>
+      <h2>評価：
+      <span class="star-rating">
+         <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+         <span class="star-rating-back">★★★★★</span>
+      </span> 
+      </h2>
+      </div> 
+    </div>
+    
+  <% end %>
+  <%= link_to "一覧に戻る", pans_path %>

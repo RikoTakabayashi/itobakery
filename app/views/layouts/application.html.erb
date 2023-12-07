@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Itobakery</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
+   
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="ito">
+    <h1>早稲田のパン屋さん</h1>
+    <h1>イトウベーカリー</h1>
+    
+  </div>
+ 
+
+<header>
+  <div class="header-list">
+   <ul>
+
+   <div class="header-link">
+   <%= link_to "Home", root_path ,class:"hako"%>
+   <%= link_to "商品一覧", pans_path ,class:"hako"%>
+   <%= link_to 'ランキング', pans_ranking_path(star_count: "true") ,class:"hako"%>
+   <%= link_to "店舗情報", blogs_path ,class:"hako"%>
+   <%= link_to "お問い合わせ", inquiry_path ,class:"hako"%>
+   </div>
+
+   <div class="login">
+   <% if user_signed_in? %>
+     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+     <li><%= link_to "新規登録", new_user_registration_path %></li>
+     <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+   </div>
+
+   </ul>
+  </div>
+ </header>
+
+ <main>
+  <%= yield %>
+ </main>
+  <footer>
+      <p>Copyright © GeekSalon All Rights Reserved.</p>
+   </footer>
+  </body>
+</html>

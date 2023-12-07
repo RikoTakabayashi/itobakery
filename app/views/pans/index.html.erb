@@ -1,0 +1,39 @@
+<br><br>
+
+<div class="menu">
+<h3>パン一覧</h3>
+</div>
+
+<%= link_to "新規投稿へ", new_pan_path %>
+
+<div class="pans-container">
+
+<% @pans.each do |t| %>
+    
+    <div class="pan">
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= t.name %>
+      <%= t.kinds %>
+      <%= t.about %>
+      <%= t.price %>
+      <%= link_to "詳細へ", pan_path(t.id) %>
+      <%= link_to "編集する", edit_pan_path(t.id) %>
+      <%= link_to "削除する", pan_path(t.id), method: :delete %> 
+      <div>
+      <h2>評価：
+      <span class="star-rating">
+         <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+         <span class="star-rating-back">★★★★★</span>
+      </span> 
+      </h2>
+      </div> 
+    </div>
+    
+  <% end %>
+
+    <%= link_to 'ランキング', pans_ranking_path(star_count: "true")%>
+
+    <br><br>
+ 
+</div>
+
