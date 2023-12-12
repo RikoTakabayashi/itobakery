@@ -18,22 +18,21 @@
  * {
     padding: 10;
     margin: 0;
-    background-color: #f8eaf8;
+    
     
   }
 
   .ito {
     font-family: 'Cherry+Bomb+One', cursive;
+    color:rgb(59, 59, 186);
+    font-size:15px;
+    text-align:center;
     padding-bottom:0px;
-    
+
   }
   
 
-  .ito h1{
-    color:rgb(59, 59, 186);
-    font-size:20px;
-    text-align:center;
-  }
+  
 
 
   header {
@@ -69,14 +68,15 @@
   }
 
   .hako{
-    color: rgb(181, 19, 67);
+    color: #FFEEFF;
     border: solid 2px ;
-    height: 70px;
+    height: 80px;
+    background-color: rgb(181, 19, 67);
   }
 
   .hako:hover{
     cursor: pointer;
-    color: azure;
+    color: black;
 
     
   }
@@ -89,9 +89,9 @@
   }
 
   footer {
-    color: rgb(39, 51, 181);
-    height: 30px;
-    background-color: #FFEEFF;
+    color: #FFEEFF;
+    height: 60px;
+    background-color: rgb(181, 19, 67);
     bottom: 0;
     width: 100%;
     display: flex;

@@ -1,39 +1,62 @@
 <br><br>
 
 <div class="menu">
-<h3>パン一覧</h3>
+  <h3>商品一覧</h3>
 </div>
 
-<%= link_to "新規投稿へ", new_pan_path %>
-
+<body>
 <div class="pans-container">
+  <div class="content">
+    <div class="title">
+      菓子パン
+    </div>
 
-<% @pans.each do |t| %>
-    
+    <div class="name">
+      <li>メロンパン </li>
+      <%= image_tag "melon.jpg" %>
+      <li>コロネ</li>
+      <li>クリームパン</li>
+      <li>あんパン</li>
+      <li>シュガードーナツ</li>
+      <li>ビスケットドーナツ</li>
+    </div>
+  </div> 
+  <br><br><br><br>
+  <br><br><br><br>
+
+  <% @pans.each do |t| %>  
     <div class="pan">
-    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
       <%= t.name %>
       <%= t.kinds %>
       <%= t.about %>
       <%= t.price %>
-      <%= link_to "詳細へ", pan_path(t.id) %>
-      <%= link_to "編集する", edit_pan_path(t.id) %>
-      <%= link_to "削除する", pan_path(t.id), method: :delete %> 
-      <div>
+      
+
+      <div class="star">
       <h2>評価：
-      <span class="star-rating">
-         <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
-         <span class="star-rating-back">★★★★★</span>
-      </span> 
+        <span class="star-rating">
+          <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+          <span class="star-rating-back">★★★★★</span>
+        </span> 
       </h2>
       </div> 
-    </div>
-    
-  <% end %>
-
-    <%= link_to 'ランキング', pans_ranking_path(star_count: "true")%>
-
-    <br><br>
  
-</div>
 
+      <div class="edit">
+        <%= link_to "詳細へ", pan_path(t.id) %>
+        <%= link_to "編集する", edit_pan_path(t.id) %>
+        <%= link_to "削除する", pan_path(t.id), method: :delete %> 
+      </div>
+    </div> 
+     
+  <% end %>
+  <br><br><br><br>
+
+  <%= link_to "新規投稿へ", new_pan_path %>
+  <%= link_to 'ランキング', pans_ranking_path(star_count: "true")%>
+
+  <br><br><br><br>
+</div>
+</body>
